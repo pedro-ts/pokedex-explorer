@@ -5,7 +5,7 @@ type Props = {}
 export default function page({}: Props) {
   return (
     <main>
-      <h1>Landing page</h1>
+        <h1>Listagem de um pokemon especifico</h1>
     </main>
   )
 }
