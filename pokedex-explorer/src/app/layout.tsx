@@ -22,7 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
       <AOSProvider>
-        <body className="bg-gradient-to-tr from-neutral-900 to-neutral-950">
+        <body className="bg-linear-to-tr from-neutral-900 to-neutral-950">
           <header>
             <NavBar />
           </header>

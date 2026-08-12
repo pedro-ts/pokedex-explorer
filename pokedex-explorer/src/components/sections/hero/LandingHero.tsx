@@ -7,7 +7,7 @@ export default function LandingHero({}: Props) {
   return (
     <section
       id="hero-container"
-      className="min-h-[calc(100vh-4.5rem)] min-w-[100%] flex flex-col justify-center items-center text-red-300 bg-gradient-to-tl to-rose-950 via-neutral-900 from-neutral-950 px-7
+      className="min-h-[calc(100vh-4.5rem)] min-w-full flex flex-col justify-center items-center text-red-300 bg-linear-to-tl to-rose-950 via-neutral-900 from-neutral-950 px-7
         "
     >
       <div
