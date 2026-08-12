@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css"; // Se você estiver usando estilos globais (Tailwind ou CSS comum)
 import AOSProvider from "@/components/layout/default/AOSProvider/AOSProvider";
 import NavBar from "@/components/layout/default/NavBar/NavBar";
+import Footer from "@/components/layout/default/Footer/Footer";
 
 // 1. Definindo o metadado da página (Título e Descrição que aparecem na aba do navegador)
 export const metadata: Metadata = {
@@ -21,15 +22,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
       <AOSProvider>
-        <body>
+        <body className="bg-gradient-to-tr from-neutral-900 to-neutral-950">
           <header>
             <NavBar />
           </header>
 
-          <main>
-            {children}
-          </main>
-          
+          <main>{children}</main>
+          <footer>
+            <Footer />
+          </footer>
         </body>
       </AOSProvider>
     </html>
