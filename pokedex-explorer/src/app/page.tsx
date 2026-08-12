@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import LandingHero from "@/components/sections/hero/LandingHero";
 
-type Props = {}
+type Props = {};
 
 export default function page({}: Props) {
   return (
-    <main>
-      <h1>Landing page</h1>
-    </main>
-  )
+    <div>
+      <LandingHero/>
+    </div>
+  );
 }
