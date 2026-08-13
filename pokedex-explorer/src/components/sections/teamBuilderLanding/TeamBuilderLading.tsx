@@ -14,7 +14,7 @@ export default function TeamBuilderLading({}: Props) {
     >
         <div
         id="temaBuilder-bg-container"
-        className="flex flex-col-reverse justify-center items-center bg-linear-to-br to-neutral-600/25 from-neutral-700/25 p-7 rounded-2xl
+        className="flex flex-col-reverse justify-center items-center bg-[url('/landing/preto-vermelho-bg.jpg')] bg-cover bg-center p-7 rounded-2xl
         lg:flex-row lg:w-full lg:rounded-none lg:min-h-[calc(100vh-4.5rem)] lg:justify-between lg:px-[20%]
         "
         >
@@ -34,7 +34,7 @@ export default function TeamBuilderLading({}: Props) {
                 </h2>
                 <p
                 className=" text-red-300 text-center
-                lg:w-[30rem] lg:text-left lg:pb-4
+                lg:w-120 lg:text-left lg:pb-4
                 ">
                 Analise fraquezas, crie sinergias e monte o time perfeito para
                 competições.
