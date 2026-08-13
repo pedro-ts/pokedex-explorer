@@ -7,7 +7,7 @@ export interface PokemonDetalhe{
     name: string;
     height: number;
     weight: number;
-    status: Status;
+    status: Status[];
 }
 
 export interface Status {
