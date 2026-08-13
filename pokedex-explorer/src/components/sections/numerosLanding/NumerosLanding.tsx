@@ -34,7 +34,9 @@ return (
         '
         >
             {valores.map((card)=>(
-                <article className='text-center px-2 py-4 bg-linear-to-br to-neutral-600/25 from-neutral-700/25 rounded-lg border-1 border-neutral-200/20
+                <article 
+                data-aos="zoom-in"
+                className='text-center px-2 py-4 bg-linear-to-br to-neutral-600/25 from-neutral-700/25 rounded-lg border-1 border-neutral-200/20
                 lg:to-transparent lg:from-transparent lg:border-none
                 '>
                     <p className=' text-4xl font-bold text-rose-600
