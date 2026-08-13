@@ -12,3 +12,5 @@ export async function getPokemons(): Promise<Pokemon[]>{
     // Acessa results da resposta
     return respostaJson.results;
 }
+
+// export async function getPokemonDetalhe(nome: string) Promisse<

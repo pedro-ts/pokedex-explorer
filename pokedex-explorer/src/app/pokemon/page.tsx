@@ -5,7 +5,7 @@ type Props = {}
 
 export default async function PokemonPage({}: Props) {
     const pokemons = await getPokemons();
-
+    console.log(pokemons);
   return (
     <main>
         <h1>Listagem de todos pokemons</h1>
