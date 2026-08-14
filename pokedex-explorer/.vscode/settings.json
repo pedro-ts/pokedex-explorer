@@ -1,0 +1,11 @@
+{
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  "prettier.useTabs": true,
+  "[typescript]": {
+    "editor.insertSpaces": false
+  },
+  "[typescriptreact]": {
+    "editor.insertSpaces": false
+  }
+}

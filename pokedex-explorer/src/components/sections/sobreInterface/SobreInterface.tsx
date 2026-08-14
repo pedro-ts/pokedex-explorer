@@ -28,7 +28,7 @@ export default function SobreInterface({}: Props) {
             tipos={["Grama", "Venenoso"]}
             imagem="/landing/bulbasaur.png"
             alt="bulbasaur"
-            key="bulbasaur"
+            keyItem="1"
             />
 
             <CardLanding
@@ -36,7 +36,7 @@ export default function SobreInterface({}: Props) {
             tipos={["Grama", "Venenoso"]}
             imagem="/landing/ivysaur.png"
             alt="ivysaur"
-            key="ivysaur"
+            keyItem="2"
             />
 
             <CardLanding
@@ -44,7 +44,7 @@ export default function SobreInterface({}: Props) {
             tipos={["Fogo"]}
             imagem="/landing/charmander.png"
             alt="charmander"
-            key="charmander"
+            keyItem="3"
             />
         </CardLandingContainer>
     </section>

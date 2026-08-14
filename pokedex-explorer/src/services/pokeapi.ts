@@ -3,8 +3,11 @@ import { PokemonDetalhe, Pokemon, PokemonDetalheFormatado } from "@/types/pokeap
 // Export permite que outros aruqivos enxerguem essa funcao
 //Promise<Pokemon[]> => lista de interfaces pokemon
 //Promise<Pokemon> => uma interface apenas pokemon
-export async function getPokemons(): Promise<PokemonDetalheFormatado[]>{
-    const resposta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
+export async function getPokemons(pagina :number = 0): Promise<PokemonDetalheFormatado[]>{
+    const offset = pagina * 20;
+    const resposta = await fetch(
+			`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`,
+		);
 
     //Comverte a resposta em json
     const respostaJson: {results: Pokemon[]} = await resposta.json();

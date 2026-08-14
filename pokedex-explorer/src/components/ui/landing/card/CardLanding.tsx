@@ -5,18 +5,26 @@ type Props = {
     tipos: string[]
     imagem: string
     alt: string
-    key: string
+    keyItem: string
 }
 
-export default function CardLanding({ nome, tipos, imagem, alt, key }: Props) {
+export default function CardLanding({ nome, tipos, imagem, alt, keyItem }: Props) {
   function parametrosClassePorTipo(tipo: string) :string{
     const classesPadrao =
       "block w-fit px-2 py-1 text-sm font-semibold rounded-full border-1 transition-all hover:scale-110";
 
-      switch(tipo){
+      switch (tipo) {
         case "grass":
         case "Grama":
           return `${classesPadrao} text-lime-400 bg-lime-400/50 border-lime-400`;
+        case "bug":
+          return `${classesPadrao} text-emerald-400 bg-emerald-400/50 border-emerald-400`;
+        case "water":
+          return `${classesPadrao} text-sky-500 bg-sky-500/50 border-sky-500`;
+        case "flying":
+          return `${classesPadrao} text-mist-400 bg-mist-400/50 border-mist-400`;
+        case "normal":
+          return `${classesPadrao} text-sky-200 bg-sky-200/50 border-sky-200`;
         case "poison":
         case "Venenoso":
           return `${classesPadrao} text-purple-300 bg-purple-600/50 border-purple-300`;
@@ -29,9 +37,8 @@ export default function CardLanding({ nome, tipos, imagem, alt, key }: Props) {
   }
 
   return (
-    <li className="list-none" key={key}>
+    <li className="list-none" key={keyItem}>
       <article
-        key={key}
         data-aos="fade-right"
         className="flex flex-row justify-between items-center text-neutral-200 bg-linear-to-br to-neutral-600/25 from-neutral-700/25 rounded-xl p-7 transition-all hover:scale-103
       "
