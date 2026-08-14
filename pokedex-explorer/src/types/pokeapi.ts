@@ -6,11 +6,21 @@ export interface Pokemon {
 export interface PokemonDetalhe {
   sprites: string[];
   name: string;
-  id: number[];
+  id: number;
   height: number;
   weight: number;
   status: Status[];
   types: Tipos[];
+}
+
+export interface PokemonDetalheFormatado {
+  sprites: string[];
+  name: string;
+  id: number;
+  height: number;
+  weight: number;
+  status: Status[];
+  types: string[];
 }
 
 export interface sprites {

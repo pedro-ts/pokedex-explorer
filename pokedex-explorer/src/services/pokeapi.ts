@@ -1,9 +1,9 @@
-import { PokemonDetalhe, Pokemon } from "@/types/pokeapi";
+import { PokemonDetalhe, Pokemon, PokemonDetalheFormatado } from "@/types/pokeapi";
 
 // Export permite que outros aruqivos enxerguem essa funcao
 //Promise<Pokemon[]> => lista de interfaces pokemon
 //Promise<Pokemon> => uma interface apenas pokemon
-export async function getPokemons(): Promise<PokemonDetalhe[]>{
+export async function getPokemons(): Promise<PokemonDetalheFormatado[]>{
     const resposta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
 
     //Comverte a resposta em json
@@ -11,11 +11,11 @@ export async function getPokemons(): Promise<PokemonDetalhe[]>{
     // Acessa results da resposta
     const listaPokemonSimples = respostaJson.results;
 
-    const listaPokemonDetalhes: PokemonDetalhe[] = []; 
+    const listaPokemonDetalhes: PokemonDetalheFormatado[] = []; 
     const obterListaDetalhada = listaPokemonSimples.map(async (pokemon) => {
         const nomePokemon = pokemon.name;
 
-        const detalhePokemon: PokemonDetalhe = await getPokemonDetalhe(nomePokemon);
+        const detalhePokemon: PokemonDetalheFormatado = await getPokemonDetalhe(nomePokemon);
 
         listaPokemonDetalhes.push(detalhePokemon);
     })
@@ -26,9 +26,17 @@ export async function getPokemons(): Promise<PokemonDetalhe[]>{
     return listaPokemonDetalhes;
 }
 
-export async function getPokemonDetalhe(nome: string): Promise<PokemonDetalhe>{
+export async function getPokemonDetalhe(nome: string): Promise<PokemonDetalheFormatado>{
     const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
-    const respostaJson = await resposta.json();
+    const respostaJson: PokemonDetalhe = await resposta.json();
+    const tipos: string[] = [];
 
-    return respostaJson;
+    respostaJson.types.map((tipo) => {
+        tipos.push(tipo.type.name);
+    });
+
+    return {
+        ...respostaJson,
+        types: tipos,
+    };
 }

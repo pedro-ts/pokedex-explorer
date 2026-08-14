@@ -1,5 +1,6 @@
 import React from 'react'
 import CardLanding from '@/components/ui/landing/card/CardLanding';
+import CardLandingContainer from '@/components/ui/landing/cardContainer/CardLandingContainer';
 
 type Props = {}
 
@@ -21,17 +22,13 @@ export default function SobreInterface({}: Props) {
         Explore informações completas sobre cada espécie, evoluções e status base.
         </p>
 
-        <div 
-        id="cards-container"
-        className="grid grid-rows-3 gap-5
-        lg:grid-rows-1 lg:grid-cols-3 lg:gap-4
-        "
-        >
+        <CardLandingContainer>
             <CardLanding
             nome="Bulbasaur"
             tipos={["Grama", "Venenoso"]}
             imagem="/landing/bulbasaur.png"
             alt="bulbasaur"
+            key="bulbasaur"
             />
 
             <CardLanding
@@ -39,6 +36,7 @@ export default function SobreInterface({}: Props) {
             tipos={["Grama", "Venenoso"]}
             imagem="/landing/ivysaur.png"
             alt="ivysaur"
+            key="ivysaur"
             />
 
             <CardLanding
@@ -46,8 +44,9 @@ export default function SobreInterface({}: Props) {
             tipos={["Fogo"]}
             imagem="/landing/charmander.png"
             alt="charmander"
+            key="charmander"
             />
-        </div>
+        </CardLandingContainer>
     </section>
   );
 }
