@@ -7,17 +7,21 @@ import TitleAndSubtitle from '@/components/ui/TitleAndSubtitle/TitleAndSubtitle'
 import CardLandingContainer from '@/components/ui/landing/cardContainer/CardLandingContainer';
 import CardLanding from '@/components/ui/landing/card/CardLanding';
 import PaginatBtn from '@/components/ui/PaginateBtn/PaginatBtn';
+import { useLoading } from '../../../context/LoadingContext';
 
 type Props = {}
 
 export default function PokemonPage({}: Props) {
+    const { iniciarLoading, finalizarLoading } = useLoading();
     const [panginaAtual, setPaginaAtual] = useState(0);
     const [pokemons, setPokemons] = useState<PokemonDetalheFormatado[]>([]);
 
     useEffect(() => {
         // Cria função
         async function buscarPokemons() {
+            iniciarLoading();
             const resposta = await getPokemons(panginaAtual);
+            finalizarLoading();
             setPokemons(resposta);
         }
 
@@ -29,7 +33,6 @@ return (
 	<main className="text-neutral-200">
 		<TitleAndSubtitle
 			title="Listagem de Pokemons"
-			subtitle="dkjkashdkjshajkdhjaks kjashdjhaskjhdkjas kashdhsakjdhkjsa asdkjhsajkhdk  kjashdjkshak"
 			headerType="h1"
 		/>
 		<div

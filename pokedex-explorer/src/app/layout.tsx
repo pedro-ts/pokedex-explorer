@@ -5,6 +5,7 @@ import "./globals.css"; // Se você estiver usando estilos globais (Tailwind ou 
 import AOSProvider from "@/components/layout/default/AOSProvider/AOSProvider";
 import NavBar from "@/components/layout/default/NavBar/NavBar";
 import Footer from "@/components/layout/default/Footer/Footer";
+import { LoadingProvider } from "../../context/LoadingContext";
 
 // 1. Definindo o metadado da página (Título e Descrição que aparecem na aba do navegador)
 export const metadata: Metadata = {
@@ -21,18 +22,19 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
-      <AOSProvider>
-        <body className="bg-linear-to-tr from-neutral-900 to-neutral-950">
-          <header>
-            <NavBar />
-          </header>
-
-          <main>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
-        </body>
-      </AOSProvider>
+      <LoadingProvider>
+        <AOSProvider>
+          <body className="bg-linear-to-tr from-neutral-900 to-neutral-950">
+            <header>
+              <NavBar />
+            </header>
+            <main>{children}</main>
+            <footer>
+              <Footer />
+            </footer>
+          </body>
+        </AOSProvider>
+      </LoadingProvider>
     </html>
   );
 }
