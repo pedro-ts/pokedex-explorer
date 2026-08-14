@@ -3,23 +3,20 @@ export interface Pokemon {
   url: string;
 }
 
-export interface PokemonDetalhe {
-  sprites: string[];
-  name: string;
-  id: number;
-  height: number;
-  weight: number;
-  status: Status[];
+export interface PokemonDetalheBase {
+	sprites: string[];
+	name: string;
+	id: number;
+	height: number;
+	weight: number;
+	status: Status[];
+}
+
+export interface PokemonDetalhe extends PokemonDetalheBase{
   types: Tipos[];
 }
 
-export interface PokemonDetalheFormatado {
-  sprites: string[];
-  name: string;
-  id: number;
-  height: number;
-  weight: number;
-  status: Status[];
+export interface PokemonDetalheFormatado extends PokemonDetalheBase {
   types: string[];
 }
 

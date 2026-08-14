@@ -6,6 +6,11 @@ import AOSProvider from "@/components/layout/default/AOSProvider/AOSProvider";
 import NavBar from "@/components/layout/default/NavBar/NavBar";
 import Footer from "@/components/layout/default/Footer/Footer";
 import { LoadingProvider } from "../../context/LoadingContext";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+
 
 // 1. Definindo o metadado da página (Título e Descrição que aparecem na aba do navegador)
 export const metadata: Metadata = {
@@ -21,7 +26,7 @@ interface RootLayoutProps {
 // 3. O Componente do Layout
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={cn("font-sans", inter.variable)}>
       <LoadingProvider>
         <AOSProvider>
           <body className="bg-linear-to-tr from-neutral-900 to-neutral-950">
