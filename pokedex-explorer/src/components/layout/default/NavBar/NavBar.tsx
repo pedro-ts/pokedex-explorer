@@ -13,7 +13,7 @@ const NavBar = () => {
       </div>
 
       <div
-        className={`fixed right-0 top-[3.7rem] z-40 w-screen bg-neutral-900 pb-6 pt-4 text-red-300 transition-all duration-300 ease-out motion-reduce:transition-none lg:static lg:w-fit lg:translate-y-0 lg:opacity-100 lg:pointer-events-auto ${
+        className={`absolute inset-x-0 top-full z-40 w-full bg-neutral-900 pb-6 pt-4 text-red-300 transition-all duration-300 ease-out motion-reduce:transition-none lg:static lg:w-fit lg:translate-y-0 lg:opacity-100 lg:pointer-events-auto ${
           menuAberto
             ? "translate-y-0 pointer-events-auto opacity-100"
             : "-translate-y-4 pointer-events-none opacity-0"

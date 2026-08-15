@@ -1,3 +1,5 @@
+import NumerosLanding from "@/components/sections/numerosLanding/NumerosLanding";
+import { NumerosLandingType } from "./landing";
 export interface Pokemon {
   name: string;
   url: string;
@@ -9,14 +11,15 @@ export interface PokemonDetalheBase {
 	id: number;
 	height: number;
 	weight: number;
-	status: Status[];
 }
 
-export interface PokemonDetalhe extends PokemonDetalheBase{
-  types: Tipos[];
+export interface PokemonDetalhe extends PokemonDetalheBase {
+	stats: Status[];
+	types: Tipos[];
 }
 
 export interface PokemonDetalheFormatado extends PokemonDetalheBase {
+  stats: NumerosLandingType[];
   types: string[];
 }
 

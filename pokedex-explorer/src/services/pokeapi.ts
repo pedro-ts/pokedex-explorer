@@ -1,3 +1,4 @@
+import { NumerosLandingType } from "@/types/landing";
 import { PokemonDetalhe, Pokemon, PokemonDetalheFormatado } from "@/types/pokeapi";
 
 // Export permite que outros aruqivos enxerguem essa funcao
@@ -33,6 +34,16 @@ export async function getPokemonDetalhe(nome: string): Promise<PokemonDetalheFor
     const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
     const respostaJson: PokemonDetalhe = await resposta.json();
     const tipos: string[] = [];
+    const statusArray: NumerosLandingType[] = [];
+
+    respostaJson.stats.map((status) => {
+        let arrayParaInserir: NumerosLandingType = {
+            valor: status.base_stat,
+            desc: status.stat.name,
+        }
+
+        statusArray.push(arrayParaInserir);
+    })
 
     respostaJson.types.map((tipo) => {
         tipos.push(tipo.type.name);
@@ -41,5 +52,6 @@ export async function getPokemonDetalhe(nome: string): Promise<PokemonDetalheFor
     return {
         ...respostaJson,
         types: tipos,
+        stats: statusArray
     };
 }

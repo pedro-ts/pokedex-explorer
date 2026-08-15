@@ -1,4 +1,4 @@
 export interface NumerosLandingType{
-    valor: string;
+    valor: string | number;
     desc: string;
 }
