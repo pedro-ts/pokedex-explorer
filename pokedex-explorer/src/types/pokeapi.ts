@@ -6,7 +6,7 @@ export interface Pokemon {
 }
 
 export interface PokemonDetalheBase {
-	sprites: string[];
+	sprites: sprites;
 	name: string;
 	id: number;
 	height: number;

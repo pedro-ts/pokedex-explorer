@@ -52,8 +52,15 @@ const tipos: Record<string, ConfiguracaoTipo> = {
 	fairy: { nome: "Fada", classe: "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-400", Icone: Sparkles },
 };
 
+const tiposEmPortugues: Record<string, string> = {
+	grama: "grass",
+	venenoso: "poison",
+	fogo: "fire",
+};
+
 export default function TypeBadge({ tipo, size = "md" }: Props) {
-	const configuracao = tipos[tipo] ?? {
+	const chaveTipo = tipo.trim().toLowerCase();
+	const configuracao = tipos[tiposEmPortugues[chaveTipo] ?? chaveTipo] ?? {
 		nome: tipo,
 		classe: "bg-neutral-500/20 text-neutral-200 border-neutral-400",
 		Icone: Circle,

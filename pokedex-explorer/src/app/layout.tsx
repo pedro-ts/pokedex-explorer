@@ -26,7 +26,7 @@ interface RootLayoutProps {
 // 3. O Componente do Layout
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt-BR" className={cn("font-sans", inter.variable)}>
+    <html lang="pt-BR" className={cn("font-sans", inter.variable)} suppressHydrationWarning>
       <LoadingProvider>
         <AOSProvider>
           <body className="bg-linear-to-tr from-neutral-900 to-neutral-950">

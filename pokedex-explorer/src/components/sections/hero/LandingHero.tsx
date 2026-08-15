@@ -29,8 +29,8 @@ export default function LandingHero({}: Props) {
             lg:mx-[25%]
           "
         >
-          Descubra, construa equipes e analise dados com a plataforma mais
-          avançada para treinadores Pokémon.
+          Encontre seu Pokémon favorito e confira tipos, atributos, altura e
+          peso — sem precisar sair por aí procurando uma Pokébola.
         </p>
       </div>
 

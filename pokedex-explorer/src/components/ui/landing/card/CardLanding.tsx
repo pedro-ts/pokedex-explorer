@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react'
+import { useRouter } from 'next/navigation';
 import TypeBadge from '@/components/shared/TypeBadge';
 
 type Props = {
@@ -7,13 +10,21 @@ type Props = {
     imagem: string
     alt: string
     keyItem: string
+    pokemonClick?: string
 }
 
-export default function CardLanding({ nome, tipos, imagem, alt, keyItem }: Props) {
+export default function CardLanding({ nome, tipos, imagem, alt, keyItem, pokemonClick = ""}: Props) {
+  const router = useRouter();
+  let classesClicaveis = "";
+  if(pokemonClick){
+    classesClicaveis = "hover:cursor-pointer"
+  }
+
   return (
-    <li className="list-none" key={keyItem}>
+    <li className={`list-none ${classesClicaveis}`} key={keyItem}>
       <article
         data-aos="fade-right"
+        onClick={() => pokemonClick && router.push(`/pokemon/${pokemonClick}`)}
         className="flex flex-row justify-between items-center text-neutral-200 bg-linear-to-br to-neutral-600/25 from-neutral-700/25 rounded-xl p-7 transition-all hover:scale-103
       "
       >

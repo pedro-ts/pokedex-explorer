@@ -30,32 +30,32 @@ export default function TeamBuilderLading({}: Props) {
                 lg:text-left
                 "
                 >
-                Team Builder Inteligente
+                Uma Pokédex prática
                 </h2>
                 <p
                 className=" text-red-300 text-center
                 lg:w-120 lg:text-left lg:pb-4
                 ">
-                Analise fraquezas, crie sinergias e monte o time perfeito para
-                competições.
+                Encontre Pokémon pelo nome, navegue pela listagem e abra uma
+                página com seus dados.
                 </p>
                 <ListaParaIcon>
                     <ListItemComIcon
-                        texto="Análise de Tipos"
+                        texto="Busca por nome"
                         icon={<CircleCheck />}
                         corTailwindIcon="text-neutral-100"
                         corTailwindTexto="text-neutral-200"
                     />
 
                     <ListItemComIcon
-                        texto="Calculadora de IV/EV"
+                        texto="Listagem paginada"
                         icon={<CircleCheck />}
                         corTailwindIcon="text-neutral-100"
                         corTailwindTexto="text-neutral-200"
                     />
 
                     <ListItemComIcon
-                        texto="Sugestões de Moveset"
+                        texto="Dados e status base"
                         icon={<CircleCheck />}
                         corTailwindIcon="text-neutral-100"
                         corTailwindTexto="text-neutral-200"

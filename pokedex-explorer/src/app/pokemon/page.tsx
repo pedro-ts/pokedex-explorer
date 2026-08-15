@@ -7,6 +7,7 @@ import TitleAndSubtitle from '@/components/ui/TitleAndSubtitle/TitleAndSubtitle'
 import CardLandingContainer from '@/components/ui/landing/cardContainer/CardLandingContainer';
 import CardLanding from '@/components/ui/landing/card/CardLanding';
 import PaginatBtn from '@/components/ui/PaginateBtn/PaginatBtn';
+import SearchPokemon from '@/components/ui/SearchPokemon/SearchPokemon';
 import { useLoading } from '../../../context/LoadingContext';
 
 type Props = {}
@@ -35,6 +36,11 @@ return (
 			title="Listagem de Pokemons"
 			headerType="h1"
 		/>
+		<div id="search-container" className='
+		px-5 w-full
+		'>
+			<SearchPokemon />
+		</div>
 		<div
 			id="list-ontainer"
 			className="px-5
@@ -50,7 +56,8 @@ return (
 						alt={pokemon.name}
 						tipos={pokemon.types}
 						keyItem={pokemon.name}
-						key={pokemon.id}
+							key={pokemon.id}
+							pokemonClick={pokemon.name}
 					/>
 				))}
 			</CardLandingContainer>

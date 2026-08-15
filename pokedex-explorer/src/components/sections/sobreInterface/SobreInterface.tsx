@@ -15,11 +15,11 @@ export default function SobreInterface({}: Props) {
         <h2 className=" text-2xl pt-10 pb-4 font-semibold
         lg:text-3xl
         ">
-            Dados Detalhados
+            Informações de cada Pokémon
         </h2>
         <p className=" pb-10 text-red-200
         ">
-        Explore informações completas sobre cada espécie, evoluções e status base.
+        Consulte tipos, altura, peso, status base e a arte oficial de cada Pokémon.
         </p>
 
         <CardLandingContainer>

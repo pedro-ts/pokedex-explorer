@@ -55,3 +55,25 @@ export async function getPokemonDetalhe(nome: string): Promise<PokemonDetalheFor
         stats: statusArray
     };
 }
+
+export async function getAutoCompletPokemon(termo: string): Promise<string[]> {
+    const listaDePokemonsRequest = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=9999999`);
+    const listaPokemonJson: { results: Pokemon[] } =
+			await listaDePokemonsRequest.json();
+    const listaPokemons: string[] = [];
+    const listaPokemonsEncontrados: string[] = [];
+    const termoFormatado: string = termo.toLocaleLowerCase();
+
+    listaPokemonJson.results.map((pokemon) => {
+			listaPokemons.push(pokemon.name);
+	});
+
+    listaPokemonsEncontrados.push(
+        // ... tira os "[]" do array e deixa só a lista de strings separados por ",""
+        ...listaPokemons.filter((nomeDoPokemon) => {
+            return nomeDoPokemon.includes(termoFormatado);
+        })
+    );
+
+    return listaPokemonsEncontrados;
+}

@@ -124,6 +124,6 @@
     @apply bg-background text-foreground;
     }
   html {
-    @apply font-sans;
+    @apply bg-neutral-900 font-sans;
     }
 }
