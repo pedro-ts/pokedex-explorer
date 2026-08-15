@@ -14,7 +14,7 @@ const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 // 1. Definindo o metadado da página (Título e Descrição que aparecem na aba do navegador)
 export const metadata: Metadata = {
-  title: "Meu App Incrível",
+  title: "Pokédex Explorer",
   description: "Criado com Next.js e TypeScript",
 };
 
